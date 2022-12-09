@@ -21,7 +21,7 @@ function BookCreate({onCreate}) {
 
   const  handleSubmit = async (event) => {
     setLoading(true);
-    timeoutFunction(5000);
+    timeoutFunction(3000);
     event.preventDefault();
     onCreate(title);
   }
