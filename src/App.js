@@ -1,15 +1,22 @@
 import React from "react";
 import {useState} from "react";
 import BookCreate from "./components/BookCreate";
+import BookList from "./components/BookList";
 
 function App() {
   const [books, setBooks] = useState([]);
 
   const createBook = (title) => {
-    console.log('book added', title)
+    const updatedBooks = [
+      ...books, {id: Math.round(Math.random() * 9999),
+      title,
+      },
+    ];
+    setBooks(updatedBooks);
   }
 
   return <div>
+    <BookList books={books} />
     <BookCreate onCreate={createBook}/>
   </div>;
 }
